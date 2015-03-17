@@ -1,0 +1,1 @@
+cp debugger.*  ~/.vim/plugin/
