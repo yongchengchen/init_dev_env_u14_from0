@@ -1,4 +1,4 @@
-FULLPATH = ${PWD}
+FULLPATH=${PWD}
 
 #for disable 3D UI 
 sudo apt-get install gnome-session-fallback
@@ -32,10 +32,10 @@ sudo apt-get install postfix
 # https://www.linode.com/docs/websites/nginx/nginx-and-phpfastcgi-on-debian-6-squeeze
 sudo apt-get install php5-cli php5-fpm
 sudo apt-get install spawn-fcgi
-sudo cp -a $FULLPATH/php-fastcgi.x /usr/bin/php-fastcgi
+sudo cp -a ${FULLPATH}/php-fastcgi.x /usr/bin/php-fastcgi
 sudo chmod +x /usr/bin/php-fastcgi
 
-sudo cp -a $FULLPATH/php-fastcgi.inid /etc/init.d/php-fastcgi
+sudo cp -a ${FULLPATH}/php-fastcgi.inid /etc/init.d/php-fastcgi
 sudo chmod +x /etc/init.d/php-fastcgi
 sudo update-rc.d php-fastcgi defaults
 sudo service php-fastcgi start
@@ -44,9 +44,9 @@ sudo service php-fastcgi start
 
 
 #config nginx website
-sudo cp -a $FULLPATH/website.nginx.conf /etc/nginx/site-available/website
+sudo cp -a ${FULLPATH}/website.nginx.conf /etc/nginx/sites-available/website
 sudo ln -s /etc/nginx/sites-available/website /etc/nginx/sites-enabled/website
-cp -a $FULLPATH/nginx.conf /etc/nginx/nginx.conf
+cp -a ${FULLPATH}/nginx.conf /etc/nginx/nginx.conf
 sudo mkdir /var/log/nginx/access_logs/
 sudo mkdir /var/log/nginx/error_logs/
 
@@ -82,7 +82,7 @@ sudo service php-fastcgi restart
 # http://www.vim.org/scripts/script.php?script_id=2508
 mkdir ~/.vim
 mkdir ~/.vim/plugin/
-cp -a $FULLPATH/vim-xdebugger/debugger.*  ~/.vim/plugin/
+cp -a ${FULLPATH}/vim-xdebugger/debugger.*  ~/.vim/plugin/
 
 #last step checkout your website
 
